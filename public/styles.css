@@ -1,0 +1,15 @@
+.nav-bar{
+    background-color: aquamarine;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.brand-text{
+    font-size: 2rem;
+    color: rgb(77, 109, 128);
+}
+
+.nav-links{
+    position: absolute;
+    right: 20%;
+    font-size: 1rem;
+
+}
