@@ -1,15 +1,318 @@
-.nav-bar{
-    background-color: aquamarine;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+body {
+    background-color: #fff;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 400;
+    font-size: large;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
 }
-.brand-text{
+
+h1 {
+    font-size: 4rem;
+    color: #32E0C4;
+    font-family: 'MuseoModerno', sans-serif;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    padding-top: 100px;
+
+
+}
+
+h2 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 3rem;
+    color: #32E0C4;
+
+}
+
+p {
+    padding: 20px;
+}
+
+.text-box {
+    margin-bottom: 50px;
+
+}
+
+/*Navbar */
+
+.navbar {
+    background-color: #F5F5F5;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+
+.navbar button{
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+#nav-brand {
+    font-family: 'MuseoModerno', sans-cursive;
     font-size: 2rem;
-    color: rgb(77, 109, 128);
+    color: #FF2E63;
+    margin:1rem;
+    text-decoration: none;
 }
 
-.nav-links{
-    position: absolute;
-    right: 20%;
-    font-size: 1rem;
+.navbar-links {
+    height: 100%;
+}
 
+.navbar-links ul {
+    padding:0;
+    margin: 0;
+    display: flex;
+ 
+}
+
+.navbar li{
+    list-style: none;
+   
+}
+
+
+.navbar-links li a {
+    color: #252A34;
+    text-decoration: none;
+    display: block;
+    padding: 1rem 2rem;
+}
+
+.navbar li.active {
+    background-color: #ff2e62;
+    color: white;
+}
+
+.navbar li:hover {
+    background-color: #777;
+}
+
+.toggle-button {
+    position: absolute;
+    top: 2rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #252A34;
+    border-radius: 10px;
+}
+
+@media (max-width: 800px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .toggle-button {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar-links ul li {
+        text-align: center;
+    }
+
+    .navbar-links ul li a {
+        padding: .5rem 1rem;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+}
+
+#section {
+    padding: 3rem 3rem;
+    position: relative;
+    align-items: center;
+
+}
+
+.btn {
+    background: #ff2e62;
+    background-image: -webkit-linear-gradient(top, #ff2e62, #e3205b);
+    background-image: -moz-linear-gradient(top, #ff2e62, #e3205b);
+    background-image: -ms-linear-gradient(top, #ff2e62, #e3205b);
+    background-image: -o-linear-gradient(top, #ff2e62, #e3205b);
+    background-image: linear-gradient(to bottom, #ff2e62, #e3205b);
+    -webkit-border-radius: 15;
+    -moz-border-radius: 15;
+    border-radius: 15px;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 15px 60px 15px 60px;
+    text-decoration: none;
+    border: none;
+    margin: auto;
+    width: fit-content;
+
+
+}
+
+.btn:hover {
+    background: #d42a5d;
+    background-image: -webkit-linear-gradient(top, #d42a5d, #d42a5d);
+    background-image: -moz-linear-gradient(top, #d42a5d, #d42a5d);
+    background-image: -ms-linear-gradient(top, #d42a5d, #d42a5d);
+    background-image: -o-linear-gradient(top, #d42a5d, #d42a5d);
+    background-image: linear-gradient(to bottom, #d42a5d, #d42a5d);
+    text-decoration: none;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.column {
+    flex: 40%;
+    margin: 20px;
+
+
+
+    @media screen and (max-width: 600px) {
+        .row {
+            flex-direction: column;
+        }
+    }
+
+
+
+
+}
+
+
+
+
+
+
+.home-hero {
+    background-color: #ebfffb;
+    padding: 3rem 3rem;
+    position: relative;
+    background-image: url("https://www.transparenttextures.com/patterns/gplay.png");
+
+}
+
+
+
+
+.contact-title {
+    padding: 0px 20px;
+    margin-top: 0;
+    position: relative;
+    text-align: left;
+}
+
+.contact-form {
+    width: 100%;
+    padding-top: 0;
+    display: block;
+    position: relative;
+    margin: auto;
+}
+
+
+.contact-form form {
+    position: relative;
+}
+
+
+.input-name {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    margin-bottom: 10px;
+    overflow: hidden;
+    display: block;
+    clear: both;
+    position: relative;
+}
+
+
+.contact-form input[type="text"] {
+    width: 49%;
+    margin-left: 2%;
+    float: left;
+    clear: none;
+    border: 5;
+    height: 50px;
+    font-size: 16px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.contact-form input[placeholder="First Name"] {
+    margin-left: 0%;
+}
+
+.contact-form input[type="email"] {
+    width: 100%;
+    border: 5;
+    height: 50px;
+    font-size: 16px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.contact-form textarea {
+    width: 100%;
+    border: 5;
+    height: 50px;
+    font-size: 16px;
+    padding: 20px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    min-height: 150px;
+    margin-bottom: 20px;
+}
+
+
+
+/* Footer*/
+
+.social-link {
+    color: white;
+    margin: 40px 10px;
+    text-decoration: none;
+}
+
+a.social-link:hover {
+    color: gray;
+}
+
+.footer {
+    text-align: center;
+    background-color: #252A34;
+    color: white;
+    padding: 80px 30px 30px;
+}
+
+.main-footer-lower {
+    padding: 20px 0px;
 }
