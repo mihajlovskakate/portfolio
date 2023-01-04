@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/portfolio/static/js/main.fec06297.js",
+    "index.html": "/portfolio/index.html",
+    "main.fec06297.js.map": "/portfolio/static/js/main.fec06297.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.fec06297.js"
+  ]
+}
