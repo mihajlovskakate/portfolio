@@ -8,9 +8,6 @@ import Contact from "./components/Contact/Contact"
 import ThankYou from "./components/Contact/ThankYou"
 import { Routes, Route } from "react-router-dom";
 
-
-
-
 function App() {
 
    return (
