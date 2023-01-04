@@ -4,7 +4,7 @@ import React from "react";
 function Projects (){
     return(   
     <div>
-        <p>This is Pricing page</p>
+        <h2>Projects</h2>
     </div>
     );
 }
