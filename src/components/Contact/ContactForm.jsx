@@ -4,10 +4,12 @@ import Textarea from './Textarea';
 import Button from './Button';
 
 
-function ContactForm(props) {
+
+function ContactForm(props, ref) {
+
+   
     const [contact, setContact] = useState({ fName: "", lName: "", email: "", message: "" });
     const [disable, setDisable] = useState(true);
-
 
 
 
@@ -20,17 +22,19 @@ function ContactForm(props) {
         })
         setDisable(event.target.value === '');
     }
+
+
     return (
         <div className="contact-form">
-            <form id="contact" onSubmit={props.onSubmit} >
-                <Input
+            <form ref = {ref} id="contact" onSubmit={props.onSubmit} >
+                          <Input
                     type="text"
                     onChange={handleChange}
                     name="fName"
                     value={contact.fName}
                     placeholder="First Name"
                 />
-
+                
                 <Input
                     type="text"
                     onChange={handleChange}
@@ -52,7 +56,7 @@ function ContactForm(props) {
                 />
                 <Button
                     type="submit"
-                    text = {"Send message"}
+                    text = "Send message"
                     disabled={disable}
                 />
             </form>
@@ -60,4 +64,4 @@ function ContactForm(props) {
     )
 }
 
-export default ContactForm
+export default React.forwardRef(ContactForm)
