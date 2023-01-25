@@ -14,7 +14,7 @@ function Contact() {
     function sendEmail(e) {
             e.preventDefault();
 
-            emailjs.sendForm('service_daidgez', 'template_xipp01l', form.current, 'EgedSTZge-SVdSIRS')
+            emailjs.sendForm('process.env.REACT_APP_SERVICE_ID', 'process.env.REACT_APP_TEMPLATE_ID', form.current, 'process.env.REACT_APP_USER_ID')
               .then((result) => {
                   
                   required && navigate("/thankyou");              
