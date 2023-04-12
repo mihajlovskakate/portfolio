@@ -1,22 +1,23 @@
 import React from "react"
-import {Link} from "react-router-dom"
+
 
 function Home() {
 
 
     return (
-        <section className="home-hero">
+        <section id="home" className="home-hero">
+            {/* <div className="home-picture"> */}
+            {/* <!-- photo credited to Karolina Grabowska from Pexels.com --> */}
+            {/* <img src={`${process.env.PUBLIC_URL}/images/hero-picture.jpg`} className= "hero-picture" alt="Flowers and mint leaves on white surface"></img> */}
+            {/* </div>   */}
             <div className="home-wrapper">
                 <div className="home-title">
-                    <h1>Hi, I'm Katerina.</h1>
-                    <h3>a web developer.</h3>
-                </div>
-                   
-            
-                <Link to="/projects">
-                    <button className="btn">Projects</button>
-                </Link>
+                    <h1>Katerina Mihajlovska</h1>
+                    <h3 className="hero-subtitle"> Front-end web developer</h3>
+                </div>     
+                <a href="#projects"><button className="btn">Projects</button></a>     
             </div>
+            
 
         </section>
     );

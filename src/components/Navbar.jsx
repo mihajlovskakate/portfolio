@@ -1,6 +1,5 @@
 import React from "react"
 import { useState } from "react"
-import { Link, useMatch, useResolvedPath } from "react-router-dom"
 
 function Navbar() {
     const [isNavExpanded, setIsNavExpanded] = useState(false)
@@ -8,7 +7,7 @@ function Navbar() {
 
     return (
         <nav className="navbar">
-            <Link to="/" id="nav-brand">K.</Link>
+            <a href="#home" className="nav-brand">K.</a>
             <button onClick={() => {
                 setIsNavExpanded(!isNavExpanded);
             }} className="toggle-button">
@@ -18,11 +17,9 @@ function Navbar() {
             </button>
             <div className={isNavExpanded? "navbar-links active":"navbar-links"}>
                 <ul>
-                    <CustomLink to="/about">About</CustomLink>
-
-                    <CustomLink to="/projects">Projects</CustomLink>
-
-                    <CustomLink to="/contact">Contact</CustomLink>
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
 
                 </ul>
             </div>
@@ -30,17 +27,6 @@ function Navbar() {
     )
 }
 
-function CustomLink({ to, children, ...props }) {
-    const resolvedPath = useResolvedPath(to);
-    const isActive = useMatch({ path: resolvedPath.pathname, end: true })
 
-    return (
-        <li className={isActive ? "active" : ""}>
-            <Link to={to} {...props}>
-                {children}
-            </Link>
-        </li>
-    )
-}
 
 export default Navbar

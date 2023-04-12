@@ -27,7 +27,7 @@ function ContactForm(props, ref) {
     return (
         <div className="contact-form">
             <form ref = {ref} id="contact" onSubmit={props.onSubmit} >
-                          <Input
+                <Input
                     type="text"
                     onChange={handleChange}
                     name="fName"
@@ -58,6 +58,12 @@ function ContactForm(props, ref) {
                     type="submit"
                     text = "Send message"
                     disabled={disable}
+                    id = "contactBtn"
+                />
+                 <Input
+                    type="hidden"
+                    onChange={handleChange}
+                    name="reply_to"
                 />
             </form>
         </div>

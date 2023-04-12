@@ -1,53 +1,54 @@
 import React from "react"
-import { useNavigate } from "react-router-dom";
 import ContactForm from "./ContactForm";
 import emailjs from '@emailjs/browser';
 
-var required = true;
+// var required = true;
 
 function Contact() {
 
     const form = React.createRef();
-
-    const navigate = useNavigate();
+    const btn = document.getElementById("contactBtn");
 
     function sendEmail(e) {
             e.preventDefault();
-
-            emailjs.sendForm('process.env.REACT_APP_SERVICE_ID', 'process.env.REACT_APP_TEMPLATE_ID', form.current, 'process.env.REACT_APP_USER_ID')
+            btn.innerHTML = "Sending..."
+            emailjs.sendForm('service_daidgez', 'template_xipp01l', form.current, 'EgedSTZge-SVdSIRS')
               .then((result) => {
-                  
-                  required && navigate("/thankyou");              
+                btn.innerHTML = 'Send message';
+                alert('Sent!');           
                 }, (error) => {
-                  console.log(error.text);
+                btn.innerHTML= 'Send message';
+                console.log(error.text);
               });
-          
             }
 
 
 
     return (
-        <section id="contact-section">
-            <div className="container-fluid">
-                
-                    <div className="row">
-                        <div className="col-3 details">
-                        <div className="contact-title">
+        <section id="contact" className="contact-section">
+            <div className="contact-container">
+                <div className="contact-title">
                     <h2>Contact me</h2>
                 </div>
-                            <ul className="contact-list">
-                                    <li className="list-item"><i className="fa-solid fa-location-dot"><span className="contact-text place">Ikast, Denmark</span></i></li>
-                                    <li className="list-item"><i className="fa fa-phone"><span className="contact-text phone"><a href="tel:1-212-555-5555" title="Give me a call">+45 71 41 29 84</a></span></i></li>
-                                    <li className="list-item"><i className="fa fa-envelope"><span className="contact-text gmail"><a href="mailto:#" title="Send me an email">mihajlovskakate@gmail.com</a></span></i></li>
-                            </ul>
+                <div className="row">
+                        <div className="col details">                           
+                            <div className="contact-intro">
+                                <p>Feel free to reach out if you're interested in working together or if you have any questions about me or my projects. </p>
+                                <p>Are you also pasonate about languages? Contact me and we can talk about lingustics, language learning or teaching strategies!</p>
+                                <p>Straight shot to my inbox: <a className="mail" href="mailto:mihajlovskakate@gmail.com">mihajlovskakate@gmail.com</a></p>
+                            </div>
+                            <div className="social-network-icons">
+                                <a className="social-link" href="https://www.linkedin.com/in/kmihajlovska/"><i className="fa-brands fa-linkedin fa-2x"></i></a>
+                                <a className="social-link" href="https://github.com/mihajlovskakate"><i className="fa-brands fa-square-github fa-2x"></i></a>
+                        </div>    
                         </div>
-                        <div className="col-9 form">
+                        <div className="col form">
                             <ContactForm
                                 ref = {form}
                                 onSubmit={sendEmail}
                             />
                         </div>
-                    </div>
+                </div>
             </div>
         </section>
     )
