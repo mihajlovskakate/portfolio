@@ -321,8 +321,8 @@ hr {
     .project-container{
          padding: 0;
      }
- 
  }
+
 .col.img, .col.description{
     padding-bottom: 60px;
 }
@@ -521,10 +521,13 @@ input:focus, input:active, textarea:focus{
 .footer {
     text-align: center;
     background-color: #464b70;
+    padding: 80px 30px 30px;
+}
+
+.footer p{
     color: white;
     font-size: 16px;
     text-transform: uppercase;
-    padding: 80px 30px 30px;
 }
 
 
