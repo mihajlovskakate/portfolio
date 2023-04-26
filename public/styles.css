@@ -425,7 +425,7 @@ hr {
 .col {
     position: relative;
     padding: 15px;
-    width: 50%;
+    width: 100%;
 }
 
 .col.details {
@@ -466,7 +466,7 @@ a.mail {
 }
 
 .social-link {
-    font-size: 30px;
+    font-size: 28px;
     color: #FF2E63;
     margin: 40px 10px;
 }
@@ -541,21 +541,18 @@ textarea:focus {
     position: relative;
 }
 
-@media only screen and (max-width: 768px) {
-    .col {
-        width: 100%;
-    }
-    .social-link {
-        font-size: 28px;
-    }
-}
-
 @media (min-width:768px) {
+    .col {
+        width: 50%;
+    }
     .contact-intro {
         width: 70%;
     }
     .contact-form {
         width: 70%;
+    }
+    .social-link {
+        font-size: 30px;
     }
 }
 
