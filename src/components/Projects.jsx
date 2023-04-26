@@ -18,8 +18,9 @@ function Projects (){
             
             <div className="col description" style = {project.id%2===0? {float:"right", textAlign:"right"}:{float:"left", textAlign:"left"}}>
                 <div className="project-title"><h3>{project.title}</h3></div>
-                <div className="project-description">
+                <div className="project-details">
                 <p>{project.description}</p>
+                <p className="project-tech">{project.technologies}</p>
                 <a href={project.link}>Live site</a>&#65372;<a href={project.github}>Github</a>
                 </div>
             </div>
