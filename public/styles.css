@@ -21,27 +21,30 @@ h1 {
     visibility: hidden;
 }
 
-  @keyframes anim-lineUp {
+@keyframes anim-lineUp {
     0% {
-      opacity: 0;
-      transform: translateY(80%);
-      visibility: visible;
+        opacity: 0;
+        transform: translateY(80%);
+        visibility: visible;
     }
+
     20% {
-      opacity: 0;
-      visibility: visible;
+        opacity: 0;
+        visibility: visible;
     }
+
     50% {
-      opacity: 1;
-      transform: translateY(0%);
-      visibility: visible;
+        opacity: 1;
+        transform: translateY(0%);
+        visibility: visible;
     }
+
     100% {
-      opacity: 1;
-      transform: translateY(0%);
-      visibility: visible;
+        opacity: 1;
+        transform: translateY(0%);
+        visibility: visible;
     }
-  }
+}
 
 h2 {
     font-size: 60px;
@@ -80,6 +83,14 @@ ul {
     display: flex;
 }
 
+hr {
+    border-color: #EAF6F6;
+    border-style: dotted none none;
+    border-width: 6px;
+    width: 3%;
+    margin: 50px auto;
+}
+
 @media only screen and (max-width: 768px) {
     h1 {
         font-size: 55px;
@@ -88,21 +99,14 @@ ul {
     h2 {
         font-size: 45px;
     }
+    hr {
+        width: 6%;
+    }
 }
 
-hr {
-    border-color: #EAF6F6;
-    border-style: dotted none none;
-    border-width: 6px;
-    width: 6%;
-    margin: 50px auto;
-}
 
-@media (min-width:780) {
-    .hr{width: 3%;}
-}
 
-/*Navbar */
+/* Navbar */
 
 .navbar {
     display: flex;
@@ -168,6 +172,30 @@ hr {
     border-radius: 10px;
 }
 
+.btn {
+    -webkit-border-radius: 36;
+    -moz-border-radius: 36;
+    border-radius: 36px;
+    font-family: inherit;
+    font-size: 25px;
+    color: #FF2E63;
+    letter-spacing: 1px;
+    padding: 10px 20px 10px 20px;
+    border: solid #FF2E63 2px;
+    text-decoration: none;
+    background: #fcfbfb;
+    cursor: pointer;
+    position: relative;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
@@ -199,30 +227,6 @@ hr {
     .navbar-links.active {
         display: flex;
     }
-}
-
-.btn {
-    -webkit-border-radius: 36;
-    -moz-border-radius: 36;
-    border-radius: 36px;
-    font-family: inherit;
-    font-size: 25px;
-    color: #FF2E63;
-    letter-spacing: 1px;
-    padding: 10px 20px 10px 20px;
-    border: solid #FF2E63 2px;
-    text-decoration: none;
-    background: #fcfbfb;
-    cursor: pointer;
-    position: relative;
-}
-
-.btn:hover {
-    transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    -o-transform: scale(1.1);
 }
 
 
@@ -260,44 +264,53 @@ hr {
 }
 
 @keyframes typewriter {
-    from{width:0;}
-    to{width: 300px;}
-  }
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 300px;
+    }
+}
 
 .pop-in {
     visibility: hidden;
     animation: 2s anim-popoutin 6s forwards 1;
-  }
-  
-  @keyframes anim-popoutin {
+}
+
+@keyframes anim-popoutin {
     0% {
-    visibility: visible;
-      transform: scale(0);
-      opacity: 0;
+        visibility: visible;
+        transform: scale(0);
+        opacity: 0;
     }
+
     25% {
         visibility: visible;
-      transform: scale(1);
-      opacity: 0;
+        transform: scale(1);
+        opacity: 0;
     }
+
     50% {
         visibility: visible;
-      transform: scale(1.2);
-      opacity: 1;
+        transform: scale(1.2);
+        opacity: 1;
     }
+
     100% {
         visibility: visible;
-      transform: scale(1);
-      opacity: 1;
+        transform: scale(1);
+        opacity: 1;
     }
-  }
-  
+}
 
-/************About*************************/
 
-.about-subtitle{
+/*About*/
+
+.about-subtitle {
     padding: 0 15px;
 }
+
 .about-description {
     margin: auto;
     width: 100%;
@@ -305,26 +318,11 @@ hr {
     padding: 50px 15px;
 }
 
-@media (min-width: 768px) {
-    .about-description {
-        width: 65%;
-    }
-}
-
 .skills-container {
     padding: 30px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
-
-
-@media (min-width: 768px) {
-    .skills-container {
-        grid-template-columns: repeat(3, 1fr);
-        padding: 60px 150px 0px;
-    }
-}
-
 
 .skills-title {
     margin-top: 30px;
@@ -348,18 +346,20 @@ hr {
     color: #FF2E63;
 }
 
+@media (min-width: 768px) {
+    .about-description {
+        width: 65%;
+    }
+    .skills-container {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 60px 150px 0px;
+    }
+}
 
-
-/************Projects**********************/
+/*Projects*/
 
 .project-container {
     padding: 0px 100px;
-}
-
-@media only screen and (max-width: 1300px) {
-    .project-container {
-        padding: 0;
-    }
 }
 
 .col.img,
@@ -395,18 +395,23 @@ hr {
     text-transform: uppercase;
 }
 
+.project-description a:hover {
+    color: #FF2E63;
+}
 
 @media only screen and (max-width: 768px) {
     .project-title,
     .project-details {
         text-align: center;
     }
-
 }
 
-.project-description a:hover {
-    color: #FF2E63;
+@media only screen and (max-width: 1300px) {
+    .project-container {
+        padding: 0;
+    }
 }
+
 
 /*Contact form*/
 
@@ -443,22 +448,9 @@ hr {
     opacity: 0.60;
 }
 
-@media only screen and (max-width: 768px) {
-    .col {
-        width: 100%;
-    }
-
-}
-
 .contact-intro {
     width: 100%;
     margin: auto;
-}
-
-@media (min-width:768px) {
-    .contact-intro {
-        width: 70%;
-    }
 }
 
 a.mail:hover {
@@ -483,25 +475,12 @@ a.social-link:hover {
     color: gray;
 }
 
-@media(max-width: 768px) {
-    .social-link {
-        font-size: 28px;
-    }
-}
-
 .contact-form {
     height: 600px;
     width: 100%;
     padding-top: 30px;
     padding-bottom: 30px;
     margin: auto;
-}
-
-@media (min-width:768px) {
-    .contact-form {
-        width: 70%;
-    }
-
 }
 
 .contact-form input {
@@ -525,7 +504,6 @@ input:active,
 textarea:focus {
     outline: 2px solid #60c2a1;
 }
-
 
 .contact-form input[type="text"] {
     width: 49%;
@@ -563,6 +541,23 @@ textarea:focus {
     position: relative;
 }
 
+@media only screen and (max-width: 768px) {
+    .col {
+        width: 100%;
+    }
+    .social-link {
+        font-size: 28px;
+    }
+}
+
+@media (min-width:768px) {
+    .contact-intro {
+        width: 70%;
+    }
+    .contact-form {
+        width: 70%;
+    }
+}
 
 
 /* Footer*/

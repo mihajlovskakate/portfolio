@@ -9,8 +9,8 @@ function Home() {
                 <div className="home-title">
                     <h1>Katerina Mihajlovska</h1>
                     <h3 className="hero-subtitle">Front-end web developer</h3>
-                </div>     
-                <a href="#projects"><button className="btn pop-in">Projects</button></a>     
+                </div>
+                <a href="#projects"><button className="btn pop-in">Projects</button></a>
             </div>
         </section>
     );

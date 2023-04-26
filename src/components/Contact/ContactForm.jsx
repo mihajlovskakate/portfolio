@@ -7,7 +7,7 @@ import Button from './Button';
 
 function ContactForm(props, ref) {
 
-   
+
     const [contact, setContact] = useState({ fName: "", lName: "", email: "", message: "" });
     const [disable, setDisable] = useState(true);
 
@@ -26,7 +26,7 @@ function ContactForm(props, ref) {
 
     return (
         <div className="contact-form">
-            <form ref = {ref} id="contact" onSubmit={props.onSubmit} >
+            <form ref={ref} id="contact" onSubmit={props.onSubmit} >
                 <Input
                     type="text"
                     onChange={handleChange}
@@ -34,7 +34,7 @@ function ContactForm(props, ref) {
                     value={contact.fName}
                     placeholder="First Name"
                 />
-                
+
                 <Input
                     type="text"
                     onChange={handleChange}
@@ -56,11 +56,11 @@ function ContactForm(props, ref) {
                 />
                 <Button
                     type="submit"
-                    text = "Send message"
+                    text="Send message"
                     disabled={disable}
-                    id = "contactBtn"
+                    id="contactBtn"
                 />
-                 <Input
+                <Input
                     type="hidden"
                     onChange={handleChange}
                     name="reply_to"
