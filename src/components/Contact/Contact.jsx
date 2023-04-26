@@ -30,7 +30,7 @@ function Contact() {
                         <div className="col details">                           
                             <div className="contact-intro">
                                 <p>Feel free to reach out if you're interested in working together or if you have any questions about me or my projects. </p>
-                                <p>Are you also pasonate about NLP or using technology in your classroom? Contact me, and we can talk about computantional linguistics, Computer-Assessed Language Learning or different trends in Education Technology!</p>
+                                <p>Are you also pasonate about NLP or using technology in your classroom? Contact me, and we can talk about Computational Linguistics, Computer-Assessed Language Learning or different trends in Education Technology!</p>
                                 <p>Straight shot to my inbox: <a className="mail" href="mailto:mihajlovskakate@gmail.com">mihajlovskakate@gmail.com</a></p>
                             </div>
                             <div className="social-network-icons">
