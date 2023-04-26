@@ -13,9 +13,9 @@ function About (){
             </h3>
         </div>
         <div className="about-description">
-            <p>My name is Katerina Mihajlovska and I am a language geek. I love both natural and artifitial languages. English, Dansih, Spanish, French, Macedonian, Bulgarian... HTML, CSS and JavaScript. 
+            <p>My name is Katerina Mihajlovska, a Front-End Web Developer based in Denmark. I love both artificial and natural languages: HTML, CSS and JavaScript... English, Dansih, Spanish, French, Macedonian and Bulgarian...  
             </p>
-            <p>I studied Natural Language Processing, but I have a long experience as a language teacher. From teaching in a classroom to lines of code on a web page, I am pationate about combining logics with creativity in order to create eye-catching, accessible, and user-friendly websites and applications.
+            <p>I have a Masters in Natural Language Processing, and as a part of my PhD project I designed Computer-Assisted Language Learning materials. For more than 10 years I was working as a language teacher, continuously implementing new technologies to improve students learning. From teaching in a classroom to lines of code on a web page, I am passionate about combining logics with creativity in order to create eye-catching, accessible, and user-friendly websites and applications.
             </p>
         </div>
             <div className="about-skills">

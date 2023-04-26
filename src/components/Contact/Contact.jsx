@@ -2,15 +2,13 @@ import React from "react"
 import ContactForm from "./ContactForm";
 import emailjs from '@emailjs/browser';
 
-// var required = true;
-
 function Contact() {
 
     const form = React.createRef();
-    const btn = document.getElementById("contactBtn");
 
     function sendEmail(e) {
             e.preventDefault();
+            const btn = document.getElementById("contactBtn");
             btn.innerHTML = "Sending..."
             emailjs.sendForm('service_daidgez', 'template_xipp01l', form.current, 'EgedSTZge-SVdSIRS')
               .then((result) => {
@@ -21,8 +19,6 @@ function Contact() {
                 console.log(error.text);
               });
             }
-
-
 
     return (
         <section id="contact" className="contact-section">

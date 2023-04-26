@@ -6,14 +6,14 @@ function Projects (){
     
     return(  
     <section id="projects" className="projects-section">
-    <div>
+  
         <h2>My projects</h2>
-    </div>
+
     <div className="project-container">
         {projectData.map((project)=>(
         <div className="row" key={project.id}>
             <div className="col img" style = {project.id%2===0? {float:"right"}:{float:"left"}}>
-                <img src={project.image} alt="galery" className="project-image"/>
+               <a href={project.link}> <img src={project.image} alt="galery" className="project-image"/></a>
             </div>    
             
             <div className="col description" style = {project.id%2===0? {float:"right", textAlign:"right"}:{float:"left", textAlign:"left"}}>
