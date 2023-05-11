@@ -12,38 +12,11 @@ body {
 }
 
 h1 {
-    font-size: 70px;
-    margin-bottom: 15px;
+    font-size: 60px;
+    margin: 0 0 15px;
     color: #414da9;
     font-family: 'Dancing Script', cursive;
     font-weight: 500;
-    animation: anim-lineUp 6s forwards 1s 1;
-    visibility: hidden;
-}
-
-@keyframes anim-lineUp {
-    0% {
-        opacity: 0;
-        transform: translateY(80%);
-        visibility: visible;
-    }
-
-    20% {
-        opacity: 0;
-        visibility: visible;
-    }
-
-    50% {
-        opacity: 1;
-        transform: translateY(0%);
-        visibility: visible;
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0%);
-        visibility: visible;
-    }
 }
 
 h2 {
@@ -99,6 +72,7 @@ hr {
     h2 {
         font-size: 45px;
     }
+
     hr {
         width: 6%;
     }
@@ -233,77 +207,100 @@ hr {
 /*Home page*/
 
 .home-hero {
-    padding: 3rem 3rem;
+    padding: 0 50px;
     position: relative;
-    width: 100%;
-    height: 100vh;
-    background: url("images/hero-picture.jpg") 50% 30% no-repeat;
-    background-size: cover;
+    height: calc(100vh - 80px);
 }
 
 .home-wrapper {
+    display: flex;
+    align-items: center;
+    height: calc(100% - 70px);
+}
+
+.left {
+    flex: 1;
+}
+
+.right {
+    flex: 1;
+    position: relative;
+    height: 100%;
+}
+
+.blob {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    margin: 0;
-    padding: 15px;
-    background-color: transparent;
-    margin: auto
+    top: 15%;
+    height: 60%;
+    min-width: 320px;
+    width: 70%;
+    overflow: hidden;
+    border-radius: 30% 70% 36% 64% / 59% 30% 70% 41%;
+    background: url(images/profile-img.png);
+    background-size: cover;
+    background-position: center;
+    animation: blob 3.7s linear infinite;
+}
+
+@keyframes blob {
+
+    0%,
+    100% {
+        border-radius: 39% 61% 52% 48% / 74% 38% 62% 26%;
+    }
+
+    33% {
+        border-radius: 48% 52% 52% 48% / 42% 63% 37% 58%;
+    }
+
+    66% {
+        border-radius: 67% 33% 81% 19% / 64% 63% 37% 36%;
+    }
 }
 
 .hero-subtitle {
     color: #252A34;
     letter-spacing: 2.1px;
     width: fit-content;
-    margin: 10px auto;
+    margin: 20px auto;
     text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    animation: typewriter 3.5s steps(23, end) 3s 1 normal both;
 }
 
-@keyframes typewriter {
-    from {
-        width: 0;
-    }
-
-    to {
-        width: 300px;
-    }
+.down-arrow {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 30px;
+    opacity: 0.4;
 }
 
-.pop-in {
-    visibility: hidden;
-    animation: 2s anim-popoutin 6s forwards 1;
-}
-
-@keyframes anim-popoutin {
-    0% {
-        visibility: visible;
-        transform: scale(0);
-        opacity: 0;
+@media (max-width: 768px) {
+    .home-hero{
+        padding: 0 10px;
+    }
+    .home-wrapper {
+        flex-direction: column;
+        padding: 5px;
     }
 
-    25% {
-        visibility: visible;
-        transform: scale(1);
-        opacity: 0;
+    .left {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
-    50% {
-        visibility: visible;
-        transform: scale(1.2);
-        opacity: 1;
+    .right {
+        display: flex;
+        justify-content: center;
+        flex: 1.5;
     }
 
-    100% {
-        visibility: visible;
-        transform: scale(1);
-        opacity: 1;
+    .blob {
+        width: 280px;
+        height: 80%;
     }
 }
-
 
 /*About*/
 
@@ -350,6 +347,7 @@ hr {
     .about-description {
         width: 65%;
     }
+
     .skills-container {
         grid-template-columns: repeat(3, 1fr);
         padding: 60px 150px 0px;
@@ -366,7 +364,6 @@ hr {
 .col.description {
     padding-bottom: 50px;
 }
-
 
 .project-image {
     width: 70%;
@@ -400,6 +397,7 @@ hr {
 }
 
 @media only screen and (max-width: 768px) {
+
     .project-title,
     .project-details {
         text-align: center;
@@ -413,8 +411,7 @@ hr {
 }
 
 
-/*Contact form*/
-
+/* Contact form */
 
 .row::after {
     content: "";
@@ -545,12 +542,15 @@ textarea:focus {
     .col {
         width: 50%;
     }
+
     .contact-intro {
         width: 70%;
     }
+
     .contact-form {
         width: 70%;
     }
+
     .social-link {
         font-size: 30px;
     }

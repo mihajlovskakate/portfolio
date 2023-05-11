@@ -3,15 +3,10 @@ import React from "react"
 function About() {
     return (
         <section id="about" className="about-section">
-            <div className="about-title">
                 <h2>About me</h2>
-            </div>
-            <img className="profile-picture" src={`${process.env.PUBLIC_URL}/images/profile-picture.png`} alt="profile"></img>
-            <div className="about-salutation">
                 <h3 className="about-subtitle">
                     Hello &bull; Hej &bull; Hola &bull; Salut &bull; Здраво &bull; Здрасти
                 </h3>
-            </div>
             <div className="about-description">
                 <p>My name is Katerina Mihajlovska, a Front-End Web Developer based in Denmark. I love both artificial and natural languages: HTML, CSS and JavaScript... English, Dansih, Spanish, French, Macedonian and Bulgarian...
                 </p>
