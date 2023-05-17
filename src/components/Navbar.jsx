@@ -1,28 +1,54 @@
 import React from "react"
-import { useState } from "react"
+import { useState, useEffect     } from "react"
 
 function Navbar() {
-    const [isNavExpanded, setIsNavExpanded] = useState(false)
+    const [isActive, setActive] = useState(false)
 
+    useEffect(() => {
+        const navItemLinks = Array.from(document.querySelectorAll('.navbar-items ul a'));
+    
+        const handleClick = () => {
+          setActive(false);
+        };
+    
+        navItemLinks.forEach((i) => {
+          i.addEventListener('click', handleClick);
+        });
+    
+        return () => {
+          navItemLinks.forEach((i) => {
+            i.removeEventListener('click', handleClick);
+          });
+        };
+      }, []); 
+    
 
     return (
-        <nav className="navbar">
-            <a href="#home" className="nav-brand">K.</a>
-            <button onClick={() => {
-                setIsNavExpanded(!isNavExpanded);
-            }} className="toggle-button">
-                <span className="bar"></span>
-                <span className="bar"></span>
-                <span className="bar"></span>
-            </button>
-            <div className={isNavExpanded? "navbar-links active":"navbar-links"}>
-                <ul>
-                    <a href="#about">About</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#contact">Contact</a>
-
-                </ul>
+        <nav className="navbar"> 
+        <div className="wrapper">             
+            <a href="#home" className="logo">K.</a>
+            <div className="menu-icon" onClick={() => {
+                        setActive(true);
+                        }}>
+                    <i className="fa-solid fa-bars fa-2xl"></i>
             </div>
+                    
+
+                <div className={isActive? "navbar-items active":"navbar-items"}>
+
+                    <div className="close-icon" onClick={() => {
+                        setActive(false);
+                        }}>
+                        <i className="fa-solid fa-xmark fa-2xl"></i>
+                    </div>
+                    
+                    <ul>
+                        <a href="#about">About</a>
+                        <a href="#projects">Projects</a>
+                        <a href="#contact">Contact</a>                              
+                    </ul>
+                    </div>
+                </div> 
         </nav>
     )
 }
