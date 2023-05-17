@@ -1,15 +1,19 @@
 import React from "react"
-import { useState, useEffect     } from "react"
+import { useState, useEffect } from "react"
 
 function Navbar() {
     const [isActive, setActive] = useState(false)
 
     useEffect(() => {
-        const navItemLinks = Array.from(document.querySelectorAll('.navbar-items ul a'));
+        const navItemLinks = Array.from(document.querySelectorAll('.navbar-items ul li'));
     
         const handleClick = () => {
           setActive(false);
         };
+
+        navItemLinks.forEach((li, i) => {
+            li.style.transitionDelay = `${i * 150}ms`;
+          });
     
         navItemLinks.forEach((i) => {
           i.addEventListener('click', handleClick);
@@ -43,9 +47,15 @@ function Navbar() {
                     </div>
                     
                     <ul>
+                        <li>
                         <a href="#about">About</a>
+                        </li>
+                        <li>
                         <a href="#projects">Projects</a>
-                        <a href="#contact">Contact</a>                              
+                        </li>
+                        <li>
+                        <a href="#contact">Contact</a>  
+                        </li>                            
                     </ul>
                     </div>
                 </div> 

@@ -49,27 +49,24 @@ nav.navbar .wrapper {
 nav.navbar .logo {
     font-family: 'Dancing Script', cursive;
     font-weight: 800;
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: #FF2E63;
     margin: 16px;
     text-decoration: none;
 }
 
 nav.navbar .menu-icon {
-    opacity: 0;
+    display: none;
     cursor: pointer;
     position: absolute;
-    top: 2rem;
-    right: 1rem;
+    top: 30px;
+    right: 16px;
 }
 
 .navbar-items .close-icon {
     position: fixed;
-    top: 2rem;
-    left: 45%;
-    width: 100%;
-    max-width: 1100px;
-    padding: 0 50px;
+    top: 28px;
+    right: 20px;
     display: none;
 }
 
@@ -87,6 +84,10 @@ nav.navbar .menu-icon {
     padding: 16px 32px;
 }
 
+.navbar a:hover {
+    font-weight: 700;
+    color: #FF2E63;
+}
 
 @media (max-width: 768px) {
 
@@ -97,8 +98,7 @@ nav.navbar .menu-icon {
 
 
     nav.navbar .menu-icon {
-        opacity: 1;
-        cursor: pointer;
+        display: block;
     }
 
     .navbar-items .close-icon {
@@ -106,13 +106,14 @@ nav.navbar .menu-icon {
     }
 
     .navbar-items.active {
-        display: flex;
+        opacity: 1;
+        pointer-events: auto;
     }
 
     .navbar-items {
-        display: none;
-        pointer-events: auto;
-        transition: all 400ms ease;
+        opacity: 0;
+        display: flex;
+        pointer-events: none;
         position: fixed;
         top: 0;
         left: 0;
@@ -123,7 +124,6 @@ nav.navbar .menu-icon {
         align-items: center;
         justify-content: center;
     }
-
 
     .navbar-items .close-icon i {
         height: 22px;
@@ -148,17 +148,19 @@ nav.navbar .menu-icon {
         opacity: 1;
         transform: translateX(0);
     }
-
-    .navbar-items ul li a:hover {
-        font-weight: 800;
-    }
-
-    .navbar a:hover {
-        font-weight: 700;
-        color: #FF2E63;
-    }
 }
 
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateX(-12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 
 /* Hero Page*/
 
@@ -303,7 +305,7 @@ nav.navbar .menu-icon {
 /* Sections */
 
 section {
-    scroll-margin-top: 80px
+    scroll-margin-top: 90px
 }
 
 h2 {
